@@ -1,0 +1,16 @@
+{
+  "name": "particle-orb-hud",
+  "version": "0.1.0",
+  "description": "Transparent always-on-top particle orb HUD with ONNX wake word",
+  "main": "main.js",
+  "scripts": { "start": "electron .", "dist": "electron-builder" },
+  "devDependencies": { "electron": "^33.0.0", "electron-builder": "^25.0.0" },
+  "build": {
+    "appId": "com.royexploit.particleorb",
+    "productName": "Particle Orb",
+    "files": ["main.js", "preload.js", "renderer/**"],
+    "extraResources": [{ "from": "wake", "to": "wake" }],
+    "win": { "target": "nsis" },
+    "nsis": { "oneClick": true, "perMachine": false }
+  }
+}
